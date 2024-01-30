@@ -16,7 +16,7 @@ RSpec.describe Book, type: :model do
   end
 
   it 'is not valid without an author' do
-    subject.auther = nil
+    subject.author = nil
     expect(subject).not_to be_valid
   end
 
