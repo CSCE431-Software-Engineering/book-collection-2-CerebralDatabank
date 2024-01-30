@@ -13,6 +13,9 @@
 ActiveRecord::Schema[7.1].define(version: 2024_01_27_060227) do
   create_table "books", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "title"
+    t.string "author"
+    t.decimal "price", precision: 10, scale: 2
+    t.date "pub_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

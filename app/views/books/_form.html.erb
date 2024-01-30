@@ -3,4 +3,16 @@
     <th>Title</th>
     <td><%= f.text_field(:title) %></td>
   </tr>
+  <tr>
+    <th>Author</th>
+    <td><%= f.text_field(:author) %></td>
+  </tr>
+  <tr>
+    <th>Price</th>
+    <td><%= f.number_field(:price, step: 0.01) %></td>
+  </tr>
+  <tr>
+    <th>Published Date</th>
+    <td><%= f.date_field(:pub_date) %></td>
+  </tr>
 </table>

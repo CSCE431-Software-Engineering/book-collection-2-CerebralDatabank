@@ -20,7 +20,7 @@ body {
 font-family: "Roboto", "Arial", sans-serif;
 }
 
-.flash-notice {
+.flash {
   position: fixed;
   top: 10px;
   left: 50%;
@@ -28,9 +28,6 @@ font-family: "Roboto", "Arial", sans-serif;
   width: 300px;
   max-width: 100%;
   height: 50px;
-  background: #CFC;
-  border: 1px solid #080;
-  color: #080;
   border-radius: 10px;
   text-align: center;
   line-height: 50px;
@@ -38,8 +35,24 @@ font-family: "Roboto", "Arial", sans-serif;
   user-select: none;
 }
 
+.flash-notice {
+  background: #CFC;
+  border: 1px solid #080;
+  color: #080;
+}
+
+.flash-alert {
+  background: #FCC;
+  border: 1px solid #800;
+  color: #800;
+}
+
 @keyframes fadeout {
   0% {opacity: 1;}
   50% {opacity: 1;}
   100% {opacity: 0;}
+}
+
+button, input {
+  padding: 5px 10px;
 }

@@ -60,12 +60,15 @@ group :development do
   # gem "spring"
 end
 
+gem "rexml"
+
 group :development, :test do
   gem "rspec-rails"
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
+  gem "capybara", ">= 3.26"
   gem "selenium-webdriver"
+  gem "webdrivers"
 end

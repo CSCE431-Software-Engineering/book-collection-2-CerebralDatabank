@@ -14,9 +14,10 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to(books_path, notice: "Book created")
+      redirect_to(books_path, notice: "Book created successfully")
     else
-      render('new')
+      flash.now[:alert] = "Book creation failed"
+      render('new', status: 422)
     end
   end
 
@@ -27,9 +28,10 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-      redirect_to(book_path(@book), notice: "Book saved")
+      redirect_to(book_path(@book), notice: "Book saved successfully")
     else
-      render('new')
+      flash.now[:alert] = "Book saving failed"
+      render('edit', status: 422)
     end
   end
 
@@ -40,12 +42,15 @@ class BooksController < ApplicationController
   def destroy
     @book = Book.find(params[:id])
     @book.destroy
-    redirect_to(books_path, notice: "Book deleted")
+    redirect_to(books_path, notice: "Book deleted successfully")
   end
 
   def book_params
     params.require(:book).permit(
-      :title
+      :title,
+      :author,
+      :price,
+      :pub_date
     )
   end
 end
